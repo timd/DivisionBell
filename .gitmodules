@@ -1,3 +1,6 @@
 [submodule "Frameworks/AFNetworking"]
 	path = Frameworks/AFNetworking
 	url = git://github.com/AFNetworking/AFNetworking.git
+[submodule "Frameworks/Kiwi"]
+	path = Frameworks/Kiwi
+	url = https://github.com/allending/Kiwi.git
