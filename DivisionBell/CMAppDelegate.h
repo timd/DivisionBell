@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UpdateProtocol <NSObject>
+
+-(void)didReceiveUpdate:(NSDictionary *)update;
+
+@end
+
 @class CMViewController;
 
 @interface CMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) CMViewController *viewController;
+@property (nonatomic, weak) id <UpdateProtocol> delegate;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMAppDelegate.h"
 
-@interface CMViewController : UIViewController
+@interface CMViewController : UIViewController <UpdateProtocol>
+
+-(void)didReceiveUpdate:(NSDictionary *)update;
 
 @end
