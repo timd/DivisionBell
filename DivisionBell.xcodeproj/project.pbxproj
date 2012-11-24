@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22110D61166115F700DF8FD9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D60166115F700DF8FD9 /* UIKit.framework */; };
+		22110D63166115F700DF8FD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D62166115F700DF8FD9 /* Foundation.framework */; };
+		22110D65166115F700DF8FD9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D64166115F700DF8FD9 /* CoreGraphics.framework */; };
+		22110D6B166115F700DF8FD9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22110D69166115F700DF8FD9 /* InfoPlist.strings */; };
+		22110D6D166115F700DF8FD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110D6C166115F700DF8FD9 /* main.m */; };
+		22110D71166115F700DF8FD9 /* CMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110D70166115F700DF8FD9 /* CMAppDelegate.m */; };
+		22110D73166115F700DF8FD9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 22110D72166115F700DF8FD9 /* Default.png */; };
+		22110D75166115F700DF8FD9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22110D74166115F700DF8FD9 /* Default@2x.png */; };
+		22110D77166115F700DF8FD9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22110D76166115F700DF8FD9 /* Default-568h@2x.png */; };
+		22110D7A166115F700DF8FD9 /* CMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110D79166115F700DF8FD9 /* CMViewController.m */; };
+		22110D7D166115F700DF8FD9 /* CMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22110D7B166115F700DF8FD9 /* CMViewController.xib */; };
+		22110D85166115F700DF8FD9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D84166115F700DF8FD9 /* SenTestingKit.framework */; };
+		22110D86166115F700DF8FD9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D60166115F700DF8FD9 /* UIKit.framework */; };
+		22110D87166115F700DF8FD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D62166115F700DF8FD9 /* Foundation.framework */; };
+		22110D8F166115F700DF8FD9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22110D8D166115F700DF8FD9 /* InfoPlist.strings */; };
+		22110D92166115F700DF8FD9 /* DivisionBellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110D91166115F700DF8FD9 /* DivisionBellTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22110D88166115F700DF8FD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22110D53166115F700DF8FD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22110D5B166115F700DF8FD9;
+			remoteInfo = DivisionBell;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22110D5C166115F700DF8FD9 /* DivisionBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DivisionBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22110D60166115F700DF8FD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22110D62166115F700DF8FD9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22110D64166115F700DF8FD9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22110D68166115F700DF8FD9 /* DivisionBell-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DivisionBell-Info.plist"; sourceTree = "<group>"; };
+		22110D6A166115F700DF8FD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22110D6C166115F700DF8FD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22110D6E166115F700DF8FD9 /* DivisionBell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DivisionBell-Prefix.pch"; sourceTree = "<group>"; };
+		22110D6F166115F700DF8FD9 /* CMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMAppDelegate.h; sourceTree = "<group>"; };
+		22110D70166115F700DF8FD9 /* CMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMAppDelegate.m; sourceTree = "<group>"; };
+		22110D72166115F700DF8FD9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		22110D74166115F700DF8FD9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		22110D76166115F700DF8FD9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		22110D78166115F700DF8FD9 /* CMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMViewController.h; sourceTree = "<group>"; };
+		22110D79166115F700DF8FD9 /* CMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMViewController.m; sourceTree = "<group>"; };
+		22110D7C166115F700DF8FD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CMViewController.xib; sourceTree = "<group>"; };
+		22110D83166115F700DF8FD9 /* DivisionBellTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DivisionBellTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22110D84166115F700DF8FD9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		22110D8C166115F700DF8FD9 /* DivisionBellTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DivisionBellTests-Info.plist"; sourceTree = "<group>"; };
+		22110D8E166115F700DF8FD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22110D90166115F700DF8FD9 /* DivisionBellTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DivisionBellTests.h; sourceTree = "<group>"; };
+		22110D91166115F700DF8FD9 /* DivisionBellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DivisionBellTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22110D59166115F700DF8FD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22110D61166115F700DF8FD9 /* UIKit.framework in Frameworks */,
+				22110D63166115F700DF8FD9 /* Foundation.framework in Frameworks */,
+				22110D65166115F700DF8FD9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22110D7F166115F700DF8FD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22110D85166115F700DF8FD9 /* SenTestingKit.framework in Frameworks */,
+				22110D86166115F700DF8FD9 /* UIKit.framework in Frameworks */,
+				22110D87166115F700DF8FD9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22110D51166115F700DF8FD9 = {
+			isa = PBXGroup;
+			children = (
+				22110D66166115F700DF8FD9 /* DivisionBell */,
+				22110D8A166115F700DF8FD9 /* DivisionBellTests */,
+				22110D5F166115F700DF8FD9 /* Frameworks */,
+				22110D5D166115F700DF8FD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22110D5D166115F700DF8FD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22110D5C166115F700DF8FD9 /* DivisionBell.app */,
+				22110D83166115F700DF8FD9 /* DivisionBellTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22110D5F166115F700DF8FD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22110D60166115F700DF8FD9 /* UIKit.framework */,
+				22110D62166115F700DF8FD9 /* Foundation.framework */,
+				22110D64166115F700DF8FD9 /* CoreGraphics.framework */,
+				22110D84166115F700DF8FD9 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22110D66166115F700DF8FD9 /* DivisionBell */ = {
+			isa = PBXGroup;
+			children = (
+				22110D6F166115F700DF8FD9 /* CMAppDelegate.h */,
+				22110D70166115F700DF8FD9 /* CMAppDelegate.m */,
+				22110D78166115F700DF8FD9 /* CMViewController.h */,
+				22110D79166115F700DF8FD9 /* CMViewController.m */,
+				22110D7B166115F700DF8FD9 /* CMViewController.xib */,
+				22110D67166115F700DF8FD9 /* Supporting Files */,
+			);
+			path = DivisionBell;
+			sourceTree = "<group>";
+		};
+		22110D67166115F700DF8FD9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22110D68166115F700DF8FD9 /* DivisionBell-Info.plist */,
+				22110D69166115F700DF8FD9 /* InfoPlist.strings */,
+				22110D6C166115F700DF8FD9 /* main.m */,
+				22110D6E166115F700DF8FD9 /* DivisionBell-Prefix.pch */,
+				22110D72166115F700DF8FD9 /* Default.png */,
+				22110D74166115F700DF8FD9 /* Default@2x.png */,
+				22110D76166115F700DF8FD9 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22110D8A166115F700DF8FD9 /* DivisionBellTests */ = {
+			isa = PBXGroup;
+			children = (
+				22110D90166115F700DF8FD9 /* DivisionBellTests.h */,
+				22110D91166115F700DF8FD9 /* DivisionBellTests.m */,
+				22110D8B166115F700DF8FD9 /* Supporting Files */,
+			);
+			path = DivisionBellTests;
+			sourceTree = "<group>";
+		};
+		22110D8B166115F700DF8FD9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22110D8C166115F700DF8FD9 /* DivisionBellTests-Info.plist */,
+				22110D8D166115F700DF8FD9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22110D5B166115F700DF8FD9 /* DivisionBell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22110D95166115F700DF8FD9 /* Build configuration list for PBXNativeTarget "DivisionBell" */;
+			buildPhases = (
+				22110D58166115F700DF8FD9 /* Sources */,
+				22110D59166115F700DF8FD9 /* Frameworks */,
+				22110D5A166115F700DF8FD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DivisionBell;
+			productName = DivisionBell;
+			productReference = 22110D5C166115F700DF8FD9 /* DivisionBell.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22110D82166115F700DF8FD9 /* DivisionBellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22110D98166115F700DF8FD9 /* Build configuration list for PBXNativeTarget "DivisionBellTests" */;
+			buildPhases = (
+				22110D7E166115F700DF8FD9 /* Sources */,
+				22110D7F166115F700DF8FD9 /* Frameworks */,
+				22110D80166115F700DF8FD9 /* Resources */,
+				22110D81166115F700DF8FD9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22110D89166115F700DF8FD9 /* PBXTargetDependency */,
+			);
+			name = DivisionBellTests;
+			productName = DivisionBellTests;
+			productReference = 22110D83166115F700DF8FD9 /* DivisionBellTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22110D53166115F700DF8FD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CM;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Charismatic Megafauna Ltd";
+			};
+			buildConfigurationList = 22110D56166115F700DF8FD9 /* Build configuration list for PBXProject "DivisionBell" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 22110D51166115F700DF8FD9;
+			productRefGroup = 22110D5D166115F700DF8FD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22110D5B166115F700DF8FD9 /* DivisionBell */,
+				22110D82166115F700DF8FD9 /* DivisionBellTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22110D5A166115F700DF8FD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22110D6B166115F700DF8FD9 /* InfoPlist.strings in Resources */,
+				22110D73166115F700DF8FD9 /* Default.png in Resources */,
+				22110D75166115F700DF8FD9 /* Default@2x.png in Resources */,
+				22110D77166115F700DF8FD9 /* Default-568h@2x.png in Resources */,
+				22110D7D166115F700DF8FD9 /* CMViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22110D80166115F700DF8FD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22110D8F166115F700DF8FD9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22110D81166115F700DF8FD9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22110D58166115F700DF8FD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22110D6D166115F700DF8FD9 /* main.m in Sources */,
+				22110D71166115F700DF8FD9 /* CMAppDelegate.m in Sources */,
+				22110D7A166115F700DF8FD9 /* CMViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22110D7E166115F700DF8FD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22110D92166115F700DF8FD9 /* DivisionBellTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22110D89166115F700DF8FD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22110D5B166115F700DF8FD9 /* DivisionBell */;
+			targetProxy = 22110D88166115F700DF8FD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22110D69166115F700DF8FD9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22110D6A166115F700DF8FD9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		22110D7B166115F700DF8FD9 /* CMViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22110D7C166115F700DF8FD9 /* en */,
+			);
+			name = CMViewController.xib;
+			sourceTree = "<group>";
+		};
+		22110D8D166115F700DF8FD9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22110D8E166115F700DF8FD9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22110D93166115F700DF8FD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		22110D94166115F700DF8FD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22110D96166115F700DF8FD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DivisionBell/DivisionBell-Prefix.pch";
+				INFOPLIST_FILE = "DivisionBell/DivisionBell-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		22110D97166115F700DF8FD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DivisionBell/DivisionBell-Prefix.pch";
+				INFOPLIST_FILE = "DivisionBell/DivisionBell-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		22110D99166115F700DF8FD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DivisionBell.app/DivisionBell";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DivisionBell/DivisionBell-Prefix.pch";
+				INFOPLIST_FILE = "DivisionBellTests/DivisionBellTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		22110D9A166115F700DF8FD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DivisionBell.app/DivisionBell";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DivisionBell/DivisionBell-Prefix.pch";
+				INFOPLIST_FILE = "DivisionBellTests/DivisionBellTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22110D56166115F700DF8FD9 /* Build configuration list for PBXProject "DivisionBell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22110D93166115F700DF8FD9 /* Debug */,
+				22110D94166115F700DF8FD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22110D95166115F700DF8FD9 /* Build configuration list for PBXNativeTarget "DivisionBell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22110D96166115F700DF8FD9 /* Debug */,
+				22110D97166115F700DF8FD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22110D98166115F700DF8FD9 /* Build configuration list for PBXNativeTarget "DivisionBellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22110D99166115F700DF8FD9 /* Debug */,
+				22110D9A166115F700DF8FD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22110D53166115F700DF8FD9 /* Project object */;
+}
