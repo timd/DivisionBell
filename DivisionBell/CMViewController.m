@@ -9,6 +9,8 @@
 #import "CMAppDelegate.h"
 #import "CMViewController.h"
 #import "DBParser.h"
+#import "TWFYParser.h"
+#import "TWFYClient.h"
 
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -16,6 +18,7 @@
 
 @property (nonatomic, strong) DBClient *dbClient;
 @property (nonatomic, strong) DBParser *dbParser;
+@property (nonatomic, strong) TWFYParser *twfyParser;
 
 @property (nonatomic, strong) CMAppDelegate *appDelegate;
 
@@ -40,6 +43,7 @@
     [self.dbClient setDelegate:self];
     
     self.dbParser = [DBParser sharedInstance];
+    self.twfyParser = [TWFYParser sharedInstance];
     
 }
 
@@ -101,23 +105,41 @@
 
 -(void)apiRepliedWithResponse:(id)response forCall:(NSString *)call {
     
-    NSLog(@"API replied with response %@ for call %@", response, call);
+    if ([call isEqualToString:@"pushUpdate"]) {
     
-    NSDictionary *responseDict = [self.dbParser parseSingleUpdateWithData:response];
-    
-    NSLog(@"API replied with dict %@ for call %@", responseDict, call);
-    
-    NSDictionary *personPayload = [responseDict objectForKey:@"person"];
-    
-    NSString *name = [personPayload  objectForKey:@"name"];
-    
-    NSString *activity = [responseDict objectForKey:@"activity"];
-    
-    NSString *detail = [responseDict objectForKey:@"topic"];
-    
-    [self.nameLabel setText:name];
-    [self.activityLabel setText:activity];
-    [self.detailLabel setText:detail];
+        NSLog(@"API replied with response %@ for call %@", response, call);
+        
+        NSDictionary *responseDict = [self.dbParser parseSingleUpdateWithData:response];
+        
+        NSLog(@"API replied with dict %@ for call %@", responseDict, call);
+        
+        NSDictionary *personPayload = [responseDict objectForKey:@"person"];
+        
+        NSString *name = [personPayload  objectForKey:@"name"];
+        NSString *person_id = [personPayload objectForKey:@"person_id"];
+        NSString *activity = [responseDict objectForKey:@"activity"];
+        
+        NSString *detail = [responseDict objectForKey:@"topic"];
+        
+        [self.nameLabel setText:name];
+        [self.activityLabel setText:activity];
+        [self.detailLabel setText:detail];
+        
+        // Update images from TWFY data
+        TWFYClient *twfyClient = [TWFYClient sharedInstance];
+        [twfyClient setDelegate:self];
+        [twfyClient getDataForPerson:person_id];
+        
+    } else if ([call isEqualToString:@"getPerson"]) {
+        
+        NSLog(@"Call received for getPerson");
+        NSLog(@"Response = %@", response);
+        
+        NSDictionary *personDict = [self.twfyParser parseGetPersonData:response];
+        
+        NSLog(@"image = %@", [personDict objectForKey:@"image"]);
+        
+    }
 
 }
 

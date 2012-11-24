@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CMAppDelegate.h"
 #import "DBClient.h"
+#import "TWFYClient.h"
 
-@interface CMViewController : UIViewController <PushUpdateProtocol, DBClientDelegate>
+@interface CMViewController : UIViewController <PushUpdateProtocol, DBClientDelegate, TWFYClientDelegate>
 
 -(void)didReceiveUpdate:(NSDictionary *)update;
 -(void)apiRepliedWithResponse:(id)response forCall:(NSString *)call;
