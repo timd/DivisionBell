@@ -12,5 +12,6 @@
 
 +(DBParser *)sharedInstance;
 -(NSDictionary *)parseUpdateJsonFromAPI:(NSData *)response;
+-(NSDictionary *)parseSingleUpdateWithData:(NSData *)jsonData;
 
 @end

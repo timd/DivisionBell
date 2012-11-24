@@ -9,7 +9,8 @@
 #import "DBClient.h"
 #import "OHHTTPStubs.h"
 
-#define kAPIEndPoint @"http://dbapi.adoptioncurve.net/"
+#define kAPIEndPoint @"http://rsparly.toastwaffle.com"
+
 
 @implementation DBClient
 
@@ -17,7 +18,7 @@
     static DBClient *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[DBClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://dbapi.adoptioncurve.net"]];
+        sharedInstance = [[DBClient alloc] initWithBaseURL:[NSURL URLWithString:kAPIEndPoint]];
     });
     
     return sharedInstance;
@@ -31,7 +32,7 @@
         
         //NSString *basename = [request.URL.absoluteString lastPathComponent];
         
-        return [OHHTTPStubsResponse responseWithFile:@"update.json"
+        return [OHHTTPStubsResponse responseWithFile:@"single.json"
                                          contentType:@"text/json"
                                         responseTime:OHHTTPStubsDownloadSpeedEDGE];
     }];
@@ -43,11 +44,11 @@
 
 -(void)getUpdateFromAPI {
     
-    [self stubNetworkCall];
+    //[self stubNetworkCall];
     
     // Build API call
     // getPerson?key=ABCD&id=12345
-    NSString *call = [NSString stringWithFormat:@"%@update", kAPIEndPoint];
+    NSString *call = [NSString stringWithFormat:@"%@/get_annunciator.php", kAPIEndPoint];
     NSString *callType = @"pushUpdate";
     
     // Call TWFY API

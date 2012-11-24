@@ -22,7 +22,6 @@
 		22110D86166115F700DF8FD9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D60166115F700DF8FD9 /* UIKit.framework */; };
 		22110D87166115F700DF8FD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110D62166115F700DF8FD9 /* Foundation.framework */; };
 		22110D8F166115F700DF8FD9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22110D8D166115F700DF8FD9 /* InfoPlist.strings */; };
-		22110D92166115F700DF8FD9 /* DivisionBellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110D91166115F700DF8FD9 /* DivisionBellTests.m */; };
 		22110DE71661230500DF8FD9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110DD51661230500DF8FD9 /* AFHTTPClient.m */; };
 		22110DE81661230500DF8FD9 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110DD51661230500DF8FD9 /* AFHTTPClient.m */; };
 		22110DE91661230500DF8FD9 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110DD71661230500DF8FD9 /* AFHTTPRequestOperation.m */; };
@@ -58,6 +57,9 @@
 		22110E25166155D100DF8FD9 /* annunciator.json in Resources */ = {isa = PBXBuildFile; fileRef = 22110E22166155D100DF8FD9 /* annunciator.json */; };
 		22110E2C166155E500DF8FD9 /* single.json in Resources */ = {isa = PBXBuildFile; fileRef = 22110E29166155E500DF8FD9 /* single.json */; };
 		22110E2D166155E500DF8FD9 /* single.json in Resources */ = {isa = PBXBuildFile; fileRef = 22110E29166155E500DF8FD9 /* single.json */; };
+		22AFE2521661577C0026A641 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AFE2511661577C0026A641 /* libKiwi.a */; };
+		22AFE256166157C40026A641 /* BaseKiwiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE255166157C40026A641 /* BaseKiwiTest.m */; };
+		22AFE2591661589C0026A641 /* ParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE2581661589C0026A641 /* ParserTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,8 +100,6 @@
 		22110D84166115F700DF8FD9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		22110D8C166115F700DF8FD9 /* DivisionBellTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DivisionBellTests-Info.plist"; sourceTree = "<group>"; };
 		22110D8E166115F700DF8FD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		22110D90166115F700DF8FD9 /* DivisionBellTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DivisionBellTests.h; sourceTree = "<group>"; };
-		22110D91166115F700DF8FD9 /* DivisionBellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DivisionBellTests.m; sourceTree = "<group>"; };
 		22110DD41661230500DF8FD9 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		22110DD51661230500DF8FD9 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		22110DD61661230500DF8FD9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -133,6 +133,9 @@
 		22110E201661432300DF8FD9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		22110E22166155D100DF8FD9 /* annunciator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = annunciator.json; path = Data/annunciator.json; sourceTree = SOURCE_ROOT; };
 		22110E29166155E500DF8FD9 /* single.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = single.json; path = Data/single.json; sourceTree = SOURCE_ROOT; };
+		22AFE2511661577C0026A641 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
+		22AFE255166157C40026A641 /* BaseKiwiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseKiwiTest.m; sourceTree = "<group>"; };
+		22AFE2581661589C0026A641 /* ParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AFE2521661577C0026A641 /* libKiwi.a in Frameworks */,
 				22110D85166115F700DF8FD9 /* SenTestingKit.framework in Frameworks */,
 				22110D86166115F700DF8FD9 /* UIKit.framework in Frameworks */,
 				22110D87166115F700DF8FD9 /* Foundation.framework in Frameworks */,
@@ -182,6 +186,7 @@
 		22110D5F166115F700DF8FD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22AFE2511661577C0026A641 /* libKiwi.a */,
 				22110E201661432300DF8FD9 /* AudioToolbox.framework */,
 				22110D60166115F700DF8FD9 /* UIKit.framework */,
 				22110D62166115F700DF8FD9 /* Foundation.framework */,
@@ -220,8 +225,7 @@
 		22110D8A166115F700DF8FD9 /* DivisionBellTests */ = {
 			isa = PBXGroup;
 			children = (
-				22110D90166115F700DF8FD9 /* DivisionBellTests.h */,
-				22110D91166115F700DF8FD9 /* DivisionBellTests.m */,
+				22AFE253166157840026A641 /* KiwiTests */,
 				22110D8B166115F700DF8FD9 /* Supporting Files */,
 			);
 			path = DivisionBellTests;
@@ -350,6 +354,15 @@
 				22110E1D16612E6400DF8FD9 /* DBParser.m */,
 			);
 			name = Parser;
+			sourceTree = "<group>";
+		};
+		22AFE253166157840026A641 /* KiwiTests */ = {
+			isa = PBXGroup;
+			children = (
+				22AFE255166157C40026A641 /* BaseKiwiTest.m */,
+				22AFE2581661589C0026A641 /* ParserTest.m */,
+			);
+			name = KiwiTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,7 +523,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22110D92166115F700DF8FD9 /* DivisionBellTests.m in Sources */,
 				22110DE81661230500DF8FD9 /* AFHTTPClient.m in Sources */,
 				22110DEA1661230500DF8FD9 /* AFHTTPRequestOperation.m in Sources */,
 				22110DEC1661230500DF8FD9 /* AFImageRequestOperation.m in Sources */,
@@ -524,6 +536,8 @@
 				22110E0C166123EB00DF8FD9 /* OHHTTPStubs.m in Sources */,
 				22110E0E166123EB00DF8FD9 /* OHHTTPStubsResponse.m in Sources */,
 				22110E1F16612E6400DF8FD9 /* DBParser.m in Sources */,
+				22AFE256166157C40026A641 /* BaseKiwiTest.m in Sources */,
+				22AFE2591661589C0026A641 /* ParserTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,8 +662,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DivisionBell/DivisionBell-Prefix.pch";
 				INFOPLIST_FILE = "DivisionBellTests/DivisionBellTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Frameworks/Kiwi/Kiwi";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -665,8 +681,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DivisionBell/DivisionBell-Prefix.pch";
 				INFOPLIST_FILE = "DivisionBellTests/DivisionBellTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Frameworks/Kiwi/Kiwi";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -690,6 +708,7 @@
 				22110D97166115F700DF8FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22110D98166115F700DF8FD9 /* Build configuration list for PBXNativeTarget "DivisionBellTests" */ = {
 			isa = XCConfigurationList;
@@ -698,6 +717,7 @@
 				22110D9A166115F700DF8FD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
