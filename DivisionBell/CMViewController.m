@@ -10,6 +10,7 @@
 #import "CMViewController.h"
 #import "DBParser.h"
 
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface CMViewController ()
 
@@ -51,11 +52,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+#pragma mark AppDelegate protocol
+
 -(void)didReceiveUpdate:(NSDictionary *)update {
     
+    if ([[update objectForKey:@"bell"] isEqualToString:@"1"]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Division bell!" message:@"Hurry to the Lobby!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        
+        NSLog(@"didReceiveBellUpdate");
+        return;
+        
+    }
+    
+    NSLog(@"didReceiveUpdate: %@", update);
     [self.dbClient getUpdateFromAPI];
     
 }
+
+#pragma mark -
+#pragma mark DBClient protocol methods
 
 -(void)apiRepliedWithResponse:(id)response forCall:(NSString *)call {
     
@@ -73,6 +91,13 @@
     [self.activityLabel setText:activity];
     [self.detailLabel setText:detail];
     
+}
+
+-(void) playSound {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"changeTrack" ofType:@"aif"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
 }
 
 @end

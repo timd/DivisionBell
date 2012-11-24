@@ -64,10 +64,8 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"received notification: %@", userInfo);
     
-    NSDictionary *updateDictionary = @{@"update" : @"foo!"};
-    [self.delegate didReceiveUpdate:updateDictionary];
+    [self.delegate didReceiveUpdate:userInfo];
 }
 
 @end
