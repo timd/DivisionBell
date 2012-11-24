@@ -93,11 +93,22 @@
     
 }
 
--(void) playSound {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"changeTrack" ofType:@"aif"];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
+-(void)playSound {
+    
+    // ivar
+    SystemSoundID mBeep;
+    
+    // Create the sound ID
+    NSString* path = [[NSBundle mainBundle]
+                      pathForResource:@"Beep" ofType:@"aiff"];
+    NSURL* url = [NSURL fileURLWithPath:path];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mBeep);
+    
+    // Play the sound
+    AudioServicesPlaySystemSound(mBeep);
+    
+    // Dispose of the sound
+    AudioServicesDisposeSystemSoundID(mBeep);
 }
 
 @end
