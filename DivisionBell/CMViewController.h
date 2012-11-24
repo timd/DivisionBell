@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CMAppDelegate.h"
+#import "DBClient.h"
 
-@interface CMViewController : UIViewController <UpdateProtocol>
+@interface CMViewController : UIViewController <PushUpdateProtocol, DBClientDelegate>
 
 -(void)didReceiveUpdate:(NSDictionary *)update;
+-(void)apiRepliedWithResponse:(id)response forCall:(NSString *)call;
 
 @end

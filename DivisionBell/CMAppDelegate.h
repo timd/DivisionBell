@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol UpdateProtocol <NSObject>
+@protocol PushUpdateProtocol <NSObject>
 
 -(void)didReceiveUpdate:(NSDictionary *)update;
 
@@ -20,6 +20,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) CMViewController *viewController;
-@property (nonatomic, weak) id <UpdateProtocol> delegate;
+@property (nonatomic, weak) id <PushUpdateProtocol> delegate;
 
 @end

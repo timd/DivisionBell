@@ -8,11 +8,20 @@
 
 #import "CMAppDelegate.h"
 #import "CMViewController.h"
+#import "DBParser.h"
+
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface CMViewController ()
 
+@property (nonatomic, strong) DBClient *dbClient;
+@property (nonatomic, strong) DBParser *dbParser;
+
 @property (nonatomic, strong) CMAppDelegate *appDelegate;
-@property (nonatomic, weak) IBOutlet UITextView *textView;
+
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *activityLabel;
+@property (nonatomic, weak) IBOutlet UILabel *detailLabel;
 
 @end
 
@@ -24,6 +33,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.appDelegate = (CMAppDelegate *)[[UIApplication sharedApplication] delegate];
     [self.appDelegate setDelegate:self];
+    
+    self.dbClient = [DBClient sharedInstance];
+    [self.dbClient setDelegate:self];
+    
+    self.dbParser = [DBParser sharedInstance];
     
 }
 
@@ -38,11 +52,63 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+#pragma mark AppDelegate protocol
+
 -(void)didReceiveUpdate:(NSDictionary *)update {
     
-    NSString *text = [update objectForKey:@"update"];
-    [self.textView setText:text];
+    if ([[update objectForKey:@"bell"] isEqualToString:@"1"]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Division bell!" message:@"Hurry to the Lobby!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        
+        NSLog(@"didReceiveBellUpdate");
+        return;
+        
+    }
     
+    NSLog(@"didReceiveUpdate: %@", update);
+    [self.dbClient getUpdateFromAPI];
+    
+}
+
+#pragma mark -
+#pragma mark DBClient protocol methods
+
+-(void)apiRepliedWithResponse:(id)response forCall:(NSString *)call {
+    
+    NSLog(@"API replied with response %@ for call %@", response, call);
+    
+    NSDictionary *responseDict = [self.dbParser parseUpdateJsonFromAPI:response];
+    
+    NSLog(@"API replied with dict %@ for call %@", responseDict, call);
+    
+    NSString *name = [responseDict objectForKey:@"name"];
+    NSString *activity = [responseDict objectForKey:@"activity"];
+    NSString *detail = [responseDict objectForKey:@"detail"];
+    
+    [self.nameLabel setText:name];
+    [self.activityLabel setText:activity];
+    [self.detailLabel setText:detail];
+    
+}
+
+-(void)playSound {
+    
+    // ivar
+    SystemSoundID mBeep;
+    
+    // Create the sound ID
+    NSString* path = [[NSBundle mainBundle]
+                      pathForResource:@"Beep" ofType:@"aiff"];
+    NSURL* url = [NSURL fileURLWithPath:path];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mBeep);
+    
+    // Play the sound
+    AudioServicesPlaySystemSound(mBeep);
+    
+    // Dispose of the sound
+    AudioServicesDisposeSystemSoundID(mBeep);
 }
 
 @end
