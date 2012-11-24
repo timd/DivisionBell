@@ -48,7 +48,7 @@
 
 -(void)getDataForPerson:(NSString *)personID {
     
-    [self stubNetworkCall];
+    //[self stubNetworkCall];
 
     // Set call back type
     NSString *callType = @"getPerson";

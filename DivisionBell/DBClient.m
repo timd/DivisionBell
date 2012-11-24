@@ -30,11 +30,23 @@
     
     [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck) {
         
-        //NSString *basename = [request.URL.absoluteString lastPathComponent];
+        NSString *basename = [request.URL.absoluteString lastPathComponent];
+        NSLog(@"basename = %@", basename);
         
-        return [OHHTTPStubsResponse responseWithFile:@"single.json"
-                                         contentType:@"text/json"
-                                        responseTime:OHHTTPStubsDownloadSpeedEDGE];
+        if ([basename isEqualToString:@"get_annunciator.php"]) {
+
+            return [OHHTTPStubsResponse responseWithFile:@"single.json"
+                                             contentType:@"text/json"
+                                            responseTime:OHHTTPStubsDownloadSpeedEDGE];
+        } else {
+        
+            return [OHHTTPStubsResponse responseWithFile:@"getPerson.json"
+                                             contentType:@"text/json"
+                                            responseTime:OHHTTPStubsDownloadSpeedEDGE];
+        }
+        
+        return nil;
+
     }];
     
 #endif
@@ -44,7 +56,7 @@
 
 -(void)getUpdateFromAPI {
     
-    //[self stubNetworkCall];
+    [self stubNetworkCall];
     
     // Build API call
     // getPerson?key=ABCD&id=12345

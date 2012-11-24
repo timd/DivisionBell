@@ -89,6 +89,28 @@ describe(@"A basic test", ^{
     
     });
     
+    context(@"when handling a house up update", ^{
+        
+        __block NSDictionary *returnDict = nil;
+        
+        beforeEach(^{
+            
+            NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+            NSString *path = [bundle pathForResource:@"houseUp" ofType:@"json"];
+            
+            NSError *error = nil;
+            NSString *dataString = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:&error];
+            NSData *fileData = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+            returnDict = [parser parseSingleUpdateWithData:fileData];
+            
+        });
+        
+        it(@"should do something", ^{
+            //
+        });
+        
+    });
+    
 });
 
 SPEC_END

@@ -38,7 +38,11 @@
         return [[dictUnderTest objectForKey:@"left_house"] isEqualToString:@"9999-12-31"];
     }];
     
-    return [topLevel objectAtIndex:index];
+    if (index != NSNotFound) {
+        return [topLevel objectAtIndex:index];
+    }
+    
+    return topLevel;
     
 }
 @end

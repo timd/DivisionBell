@@ -1,0 +1,44 @@
+{
+    "bg-colour": [
+        "128",
+        "0",
+        "0"
+    ],
+    "bell": "Play",
+    "lines": [
+        {
+            "style": {
+                "Strikeout": "Off",
+                "Underline": "Off",
+                "Bold": "On",
+                "Italic": "Off",
+                "Normal": "Off"
+            },
+            "justification": "Centre",
+            "text": "HOUSEUP",
+            "flash": "Off",
+            "font-size": "78",
+            "bg-colour": [
+                "128",
+                "0",
+                "0"
+            ],
+            "bottom-right": [
+                "361",
+                "629"
+            ],
+            "fg-colour": [
+                "255",
+                "255",
+                "255"
+            ],
+            "font": "Arial",
+            "top-left": [
+                "96",
+                "19"
+            ]
+        }
+    ],
+    "activity": "HOUSEUP",
+    "datetime": "2012-11-22 23:55"
+}

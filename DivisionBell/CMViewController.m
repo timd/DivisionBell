@@ -107,38 +107,43 @@
     
     if ([call isEqualToString:@"pushUpdate"]) {
     
-        NSLog(@"API replied with response %@ for call %@", response, call);
-        
         NSDictionary *responseDict = [self.dbParser parseSingleUpdateWithData:response];
-        
-        NSLog(@"API replied with dict %@ for call %@", responseDict, call);
-        
         NSDictionary *personPayload = [responseDict objectForKey:@"person"];
         
-        NSString *name = [personPayload  objectForKey:@"name"];
-        NSString *person_id = [personPayload objectForKey:@"person_id"];
+        if (personPayload) {
+        
+            // Have received data for a person
+            NSString *name = [personPayload  objectForKey:@"name"];
+            NSString *person_id = [personPayload objectForKey:@"person_id"];
+            NSString *detail = [responseDict objectForKey:@"topic"];
+            
+            [self.nameLabel setText:name];
+            [self.detailLabel setText:detail];
+            
+            // Update images from TWFY data
+            TWFYClient *twfyClient = [TWFYClient sharedInstance];
+            [twfyClient setDelegate:self];
+            [twfyClient getDataForPerson:person_id];
+            
+        } else {
+
+            // HOUSE UP received, can only update activity
+            [self.nameLabel setText:nil];
+            [self.detailLabel setText:nil];
+
+        }
+
         NSString *activity = [responseDict objectForKey:@"activity"];
-        
-        NSString *detail = [responseDict objectForKey:@"topic"];
-        
-        [self.nameLabel setText:name];
         [self.activityLabel setText:activity];
-        [self.detailLabel setText:detail];
-        
-        // Update images from TWFY data
-        TWFYClient *twfyClient = [TWFYClient sharedInstance];
-        [twfyClient setDelegate:self];
-        [twfyClient getDataForPerson:person_id];
+
         
     } else if ([call isEqualToString:@"getPerson"]) {
         
-        NSLog(@"Call received for getPerson");
-        NSLog(@"Response = %@", response);
-        
         NSDictionary *personDict = [self.twfyParser parseGetPersonData:response];
-        
         NSLog(@"image = %@", [personDict objectForKey:@"image"]);
-        
+        NSLog(@"first_name = %@", [personDict objectForKey:@"first_name"]);
+        NSLog(@"last_name = %@", [personDict objectForKey:@"last_name"]);
+        NSLog(@"party = %@", [personDict objectForKey:@"party"]);        
     }
 
 }
