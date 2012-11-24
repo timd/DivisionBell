@@ -54,6 +54,10 @@
 		22110E1E16612E6400DF8FD9 /* DBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110E1D16612E6400DF8FD9 /* DBParser.m */; };
 		22110E1F16612E6400DF8FD9 /* DBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110E1D16612E6400DF8FD9 /* DBParser.m */; };
 		22110E211661432300DF8FD9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110E201661432300DF8FD9 /* AudioToolbox.framework */; };
+		22110E24166155D100DF8FD9 /* annunciator.json in Resources */ = {isa = PBXBuildFile; fileRef = 22110E22166155D100DF8FD9 /* annunciator.json */; };
+		22110E25166155D100DF8FD9 /* annunciator.json in Resources */ = {isa = PBXBuildFile; fileRef = 22110E22166155D100DF8FD9 /* annunciator.json */; };
+		22110E2C166155E500DF8FD9 /* single.json in Resources */ = {isa = PBXBuildFile; fileRef = 22110E29166155E500DF8FD9 /* single.json */; };
+		22110E2D166155E500DF8FD9 /* single.json in Resources */ = {isa = PBXBuildFile; fileRef = 22110E29166155E500DF8FD9 /* single.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +131,8 @@
 		22110E1C16612E6400DF8FD9 /* DBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBParser.h; sourceTree = "<group>"; };
 		22110E1D16612E6400DF8FD9 /* DBParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBParser.m; sourceTree = "<group>"; };
 		22110E201661432300DF8FD9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		22110E22166155D100DF8FD9 /* annunciator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = annunciator.json; path = Data/annunciator.json; sourceTree = SOURCE_ROOT; };
+		22110E29166155E500DF8FD9 /* single.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = single.json; path = Data/single.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +336,8 @@
 		22110E141661240500DF8FD9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				22110E22166155D100DF8FD9 /* annunciator.json */,
+				22110E29166155E500DF8FD9 /* single.json */,
 				22110E181661249500DF8FD9 /* update.json */,
 			);
 			name = Data;
@@ -439,6 +447,8 @@
 				22110D7D166115F700DF8FD9 /* CMViewController.xib in Resources */,
 				22110E0F166123EB00DF8FD9 /* PortableLibrary.xcconfig in Resources */,
 				22110E191661249500DF8FD9 /* update.json in Resources */,
+				22110E24166155D100DF8FD9 /* annunciator.json in Resources */,
+				22110E2C166155E500DF8FD9 /* single.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +459,8 @@
 				22110D8F166115F700DF8FD9 /* InfoPlist.strings in Resources */,
 				22110E10166123EB00DF8FD9 /* PortableLibrary.xcconfig in Resources */,
 				22110E1A1661249500DF8FD9 /* update.json in Resources */,
+				22110E25166155D100DF8FD9 /* annunciator.json in Resources */,
+				22110E2D166155E500DF8FD9 /* single.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

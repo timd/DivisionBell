@@ -1,0 +1,115 @@
+{
+    "bg-colour": [
+        "128",
+        "0",
+        "0"
+    ],
+    "bell": "Play",
+    "lines": [
+        {
+            "style": {
+                "Strikeout": "Off",
+                "Underline": "Off",
+                "Bold": "On",
+                "Italic": "Off",
+                "Normal": "Off"
+            },
+            "justification": "Left",
+            "text": "B. SMITH OF BASILDON",
+            "flash": "Off",
+            "font-size": "26",
+            "bg-colour": [
+                "128",
+                "0",
+                "0"
+            ],
+            "bottom-right": [
+                "420",
+                "648"
+            ],
+            "fg-colour": [
+                "255",
+                "255",
+                "255"
+            ],
+            "font": "Arial",
+            "top-left": [
+                "377",
+                "16"
+            ]
+        },
+        {
+            "style": {
+                "Strikeout": "Off",
+                "Underline": "Off",
+                "Bold": "On",
+                "Italic": "On",
+                "Normal": "Off"
+            },
+            "justification": "Centre",
+            "text": "STATEMENT:",
+            "flash": "Off",
+            "font-size": "40",
+            "bg-colour": [
+                "128",
+                "0",
+                "0"
+            ],
+            "bottom-right": [
+                "96",
+                "633"
+            ],
+            "fg-colour": [
+                "255",
+                "255",
+                "255"
+            ],
+            "font": "Arial",
+            "top-left": [
+                "30",
+                "21"
+            ]
+        },
+        {
+            "style": {
+                "Strikeout": "Off",
+                "Underline": "Off",
+                "Bold": "On",
+                "Italic": "Off",
+                "Normal": "Off"
+            },
+            "justification": "Centre",
+            "text": "'VOTING ELIGIBILITY (PRISONERS) '",
+            "flash": "Off",
+            "font-size": "36",
+            "bg-colour": [
+                "128",
+                "0",
+                "0"
+            ],
+            "bottom-right": [
+                "350",
+                "633"
+            ],
+            "fg-colour": [
+                "255",
+                "255",
+                "255"
+            ],
+            "font": "Arial",
+            "top-left": [
+                "109",
+                "26"
+            ]
+        }
+    ],
+    "datetime": "2012-11-22 14:20",
+    "topic": "'VOTING ELIGIBILITY (PRISONERS) '",
+    "activity": "STATEMENT",
+    "lord": {
+        "Dods_Id": "25311",
+        "Pims_Id": "5786",
+        "name": "Baroness Smith of Basildon",
+        "Member_Id": "4170"
+    }
+}
