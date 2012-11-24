@@ -23,10 +23,21 @@
 }
 
 -(NSDictionary *)parseUpdateJsonFromAPI:(NSData *)response {
-    
     NSError *error = nil;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:&error];
     return dict;
+}
+
+-(NSDictionary *)parseSingleUpdateWithData:(NSData *)jsonData {
+    
+    NSError *error = nil;
+    NSDictionary *topLevel = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    
+    return topLevel;
     
 }
 

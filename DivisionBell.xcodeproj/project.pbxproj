@@ -133,7 +133,7 @@
 		22110E201661432300DF8FD9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		22110E22166155D100DF8FD9 /* annunciator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = annunciator.json; path = Data/annunciator.json; sourceTree = SOURCE_ROOT; };
 		22110E29166155E500DF8FD9 /* single.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = single.json; path = Data/single.json; sourceTree = SOURCE_ROOT; };
-		22AFE2511661577C0026A641 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKiwi.a; path = "Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
+		22AFE2511661577C0026A641 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
 		22AFE255166157C40026A641 /* BaseKiwiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseKiwiTest.m; sourceTree = "<group>"; };
 		22AFE2581661589C0026A641 /* ParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
