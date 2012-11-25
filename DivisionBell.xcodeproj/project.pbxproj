@@ -70,6 +70,17 @@
 		2212B18A16618EB70038E3A5 /* CMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110D79166115F700DF8FD9 /* CMViewController.m */; };
 		2212B18B16618F520038E3A5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110E201661432300DF8FD9 /* AudioToolbox.framework */; };
 		2212B18D166199ED0038E3A5 /* thatcher.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2212B18C166199ED0038E3A5 /* thatcher.jpg */; };
+		224A572D16622136001CF014 /* CMDivisionAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 224A572C16622136001CF014 /* CMDivisionAlert.m */; };
+		224A572F16622148001CF014 /* CMDivisionAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224A572E16622148001CF014 /* CMDivisionAlert.xib */; };
+		224A574516622603001CF014 /* norwegian_rose_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A574116622603001CF014 /* norwegian_rose_@2X.png */; };
+		224A574616622603001CF014 /* norwegian_rose.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A574216622603001CF014 /* norwegian_rose.png */; };
+		224A574716622603001CF014 /* portcullis.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A574316622603001CF014 /* portcullis.png */; };
+		224A574816622603001CF014 /* portcullis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A574416622603001CF014 /* portcullis@2x.png */; };
+		224A575416622E92001CF014 /* pool_table_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A575216622E92001CF014 /* pool_table_@2X.png */; };
+		224A575516622E92001CF014 /* pool_table.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A575316622E92001CF014 /* pool_table.png */; };
+		224A575716623081001CF014 /* Rosarivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 224A575616623081001CF014 /* Rosarivo-Regular.ttf */; };
+		224A575B166236BD001CF014 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A575A166236BD001CF014 /* icon.png */; };
+		224A575D166236C0001CF014 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A575C166236C0001CF014 /* icon@2x.png */; };
 		22AFE2521661577C0026A641 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AFE2511661577C0026A641 /* libKiwi.a */; };
 		22AFE256166157C40026A641 /* BaseKiwiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE255166157C40026A641 /* BaseKiwiTest.m */; };
 		22AFE2591661589C0026A641 /* ParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE2581661589C0026A641 /* ParserTest.m */; };
@@ -154,7 +165,19 @@
 		2212B17F166188160038E3A5 /* getPerson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = getPerson.json; path = Data/getPerson.json; sourceTree = SOURCE_ROOT; };
 		2212B18216618DAE0038E3A5 /* houseUp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = houseUp.json; path = Data/houseUp.json; sourceTree = SOURCE_ROOT; };
 		2212B18816618E8B0038E3A5 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
-		2212B18C166199ED0038E3A5 /* thatcher.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thatcher.jpg; sourceTree = "<group>"; };
+		2212B18C166199ED0038E3A5 /* thatcher.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = thatcher.jpg; path = ../thatcher.jpg; sourceTree = "<group>"; };
+		224A572B16622136001CF014 /* CMDivisionAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMDivisionAlert.h; sourceTree = "<group>"; };
+		224A572C16622136001CF014 /* CMDivisionAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMDivisionAlert.m; sourceTree = "<group>"; };
+		224A572E16622148001CF014 /* CMDivisionAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMDivisionAlert.xib; sourceTree = "<group>"; };
+		224A574116622603001CF014 /* norwegian_rose_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "norwegian_rose_@2X.png"; path = "Assets/norwegian_rose_@2X.png"; sourceTree = SOURCE_ROOT; };
+		224A574216622603001CF014 /* norwegian_rose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = norwegian_rose.png; path = Assets/norwegian_rose.png; sourceTree = SOURCE_ROOT; };
+		224A574316622603001CF014 /* portcullis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = portcullis.png; path = Assets/portcullis.png; sourceTree = SOURCE_ROOT; };
+		224A574416622603001CF014 /* portcullis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "portcullis@2x.png"; path = "Assets/portcullis@2x.png"; sourceTree = SOURCE_ROOT; };
+		224A575216622E92001CF014 /* pool_table_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pool_table_@2X.png"; path = "Assets/pool_table_@2X.png"; sourceTree = SOURCE_ROOT; };
+		224A575316622E92001CF014 /* pool_table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pool_table.png; path = Assets/pool_table.png; sourceTree = SOURCE_ROOT; };
+		224A575616623081001CF014 /* Rosarivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rosarivo-Regular.ttf"; path = "Assets/Rosarivo-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		224A575A166236BD001CF014 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		224A575C166236C0001CF014 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		22AFE2511661577C0026A641 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
 		22AFE255166157C40026A641 /* BaseKiwiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseKiwiTest.m; sourceTree = "<group>"; };
 		22AFE2581661589C0026A641 /* ParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTest.m; sourceTree = "<group>"; };
@@ -190,7 +213,6 @@
 		22110D51166115F700DF8FD9 = {
 			isa = PBXGroup;
 			children = (
-				2212B18C166199ED0038E3A5 /* thatcher.jpg */,
 				22110D66166115F700DF8FD9 /* DivisionBell */,
 				22110D8A166115F700DF8FD9 /* DivisionBellTests */,
 				22110D5F166115F700DF8FD9 /* Frameworks */,
@@ -223,6 +245,7 @@
 		22110D66166115F700DF8FD9 /* DivisionBell */ = {
 			isa = PBXGroup;
 			children = (
+				224A5730166221E7001CF014 /* Assets */,
 				22110D9B1661226C00DF8FD9 /* App delegate */,
 				22110D9C1661227E00DF8FD9 /* Front end */,
 				22110DF91661231000DF8FD9 /* Back end */,
@@ -280,6 +303,7 @@
 				22110D78166115F700DF8FD9 /* CMViewController.h */,
 				22110D79166115F700DF8FD9 /* CMViewController.m */,
 				22110D7B166115F700DF8FD9 /* CMViewController.xib */,
+				224A572A16622112001CF014 /* Division alert */,
 			);
 			name = "Front end";
 			sourceTree = "<group>";
@@ -384,6 +408,33 @@
 				22110E1D16612E6400DF8FD9 /* DBParser.m */,
 			);
 			name = Parser;
+			sourceTree = "<group>";
+		};
+		224A572A16622112001CF014 /* Division alert */ = {
+			isa = PBXGroup;
+			children = (
+				224A572B16622136001CF014 /* CMDivisionAlert.h */,
+				224A572C16622136001CF014 /* CMDivisionAlert.m */,
+				224A572E16622148001CF014 /* CMDivisionAlert.xib */,
+			);
+			name = "Division alert";
+			sourceTree = "<group>";
+		};
+		224A5730166221E7001CF014 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				224A575C166236C0001CF014 /* icon@2x.png */,
+				224A575A166236BD001CF014 /* icon.png */,
+				2212B18C166199ED0038E3A5 /* thatcher.jpg */,
+				224A575616623081001CF014 /* Rosarivo-Regular.ttf */,
+				224A575216622E92001CF014 /* pool_table_@2X.png */,
+				224A575316622E92001CF014 /* pool_table.png */,
+				224A574116622603001CF014 /* norwegian_rose_@2X.png */,
+				224A574216622603001CF014 /* norwegian_rose.png */,
+				224A574316622603001CF014 /* portcullis.png */,
+				224A574416622603001CF014 /* portcullis@2x.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		22AFE253166157840026A641 /* KiwiTests */ = {
@@ -497,6 +548,16 @@
 				2212B180166188160038E3A5 /* getPerson.json in Resources */,
 				2212B18316618DAE0038E3A5 /* houseUp.json in Resources */,
 				2212B18D166199ED0038E3A5 /* thatcher.jpg in Resources */,
+				224A572F16622148001CF014 /* CMDivisionAlert.xib in Resources */,
+				224A574516622603001CF014 /* norwegian_rose_@2X.png in Resources */,
+				224A574616622603001CF014 /* norwegian_rose.png in Resources */,
+				224A574716622603001CF014 /* portcullis.png in Resources */,
+				224A574816622603001CF014 /* portcullis@2x.png in Resources */,
+				224A575416622E92001CF014 /* pool_table_@2X.png in Resources */,
+				224A575516622E92001CF014 /* pool_table.png in Resources */,
+				224A575716623081001CF014 /* Rosarivo-Regular.ttf in Resources */,
+				224A575B166236BD001CF014 /* icon.png in Resources */,
+				224A575D166236C0001CF014 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +616,7 @@
 				22110E1E16612E6400DF8FD9 /* DBParser.m in Sources */,
 				2212B168166180970038E3A5 /* TWFYClient.m in Sources */,
 				2212B17A166185560038E3A5 /* TWFYParser.m in Sources */,
+				224A572D16622136001CF014 /* CMDivisionAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

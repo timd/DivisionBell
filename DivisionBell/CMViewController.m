@@ -6,11 +6,15 @@
 //  Copyright (c) 2012 Charismatic Megafauna Ltd. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "CMAppDelegate.h"
 #import "CMViewController.h"
 #import "DBParser.h"
 #import "TWFYParser.h"
 #import "TWFYClient.h"
+
+#import "CMDivisionAlert.h"
 
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -29,6 +33,8 @@
 
 @property (nonatomic) BOOL hasUpdated;
 
+@property (nonatomic, strong) UIView *alert;
+
 @end
 
 @implementation CMViewController
@@ -46,6 +52,22 @@
     self.dbParser = [DBParser sharedInstance];
     self.twfyParser = [TWFYParser sharedInstance];
     
+    UIColor *baize = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"pool_table"]];
+    [self.view setBackgroundColor:baize];
+    
+    [self.nameLabel setFont:[UIFont fontWithName:@"Rosarivo-Regular" size:18]];
+    [self.activityLabel setFont:[UIFont fontWithName:@"Rosarivo-Regular" size:18]];
+    [self.detailLabel setFont:[UIFont fontWithName:@"Rosarivo-Regular" size:18]];
+    
+    [self.imageView.layer setMasksToBounds:NO];
+    [self.imageView.layer setCornerRadius:8.0f];
+    [self.imageView.layer setShadowOffset:CGSizeMake(0, 5)];
+    [self.imageView.layer setShadowRadius:5.0f];
+    [self.imageView.layer setShadowOpacity:0.5f];
+    
+    [self.nameLabel setText:nil];
+    [self.activityLabel setText:@"The House is not sitting."];
+    [self.detailLabel setText:nil];
 }
 
 -(void)viewDidUnload {
@@ -63,22 +85,32 @@
 #pragma mark Interation
 
 -(IBAction)didTapUpdateButton:(id)sender {
-    
-    if (!self.hasUpdated) {
-        [self.dbClient getUpdateFromAPI];
-        self.hasUpdated = YES;
-    } else {
-        [self.nameLabel setText:@"Name"];
-        [self.activityLabel setText:@"Activity"];
-        [self.detailLabel setText:@"Detail"];
-        [self.imageView setImage:nil];
-        self.hasUpdated = NO;
-    }
+    [self.dbClient getUpdateFromAPI];
+    self.hasUpdated = YES;
 }
 
 -(IBAction)didTapTriggerButton:(id)sender {
+    
+    if (self.alert) {
+        [self.alert removeFromSuperview];
+    }
+    
     NSDictionary *update = @{@"bell" : @"1"};
     [self didReceiveUpdate:update];
+}
+
+-(IBAction)didTapClearButton:(id)sender {
+
+    if (self.alert) {
+        [self.alert removeFromSuperview];
+    }
+
+    [self.nameLabel setText:nil];
+    [self.activityLabel setText:@"The House is not sitting."];
+    [self.detailLabel setText:nil];
+    [self.imageView setImage:nil];
+    self.hasUpdated = NO;
+
 }
 
 #pragma mark -
@@ -89,9 +121,12 @@
     // Handle division bell
     if ([[update objectForKey:@"bell"] isEqualToString:@"1"]) {
         
+        [self drawAlertView];
+
+/*
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Division bell!" message:@"Hurry to the Lobby!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
-        
+*/
         NSLog(@"didReceiveBellUpdate");
         return;
         
@@ -198,5 +233,78 @@
     // Dispose of the sound
     AudioServicesDisposeSystemSoundID(mBeep);
 }
+
+#pragma mark -
+#pragma mark Alert view
+
+-(void)drawAlertView {
+    
+    self.alert = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, 280)];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"norwegian_rose"]];
+    [self.alert setBackgroundColor:background];
+    
+    [self.alert.layer setMasksToBounds:NO];
+    [self.alert.layer setCornerRadius:8.0f];
+    [self.alert.layer setShadowOffset:CGSizeMake(0, 10)];
+    [self.alert.layer setShadowRadius:5.0f];
+    [self.alert.layer setShadowOpacity:0.5f];
+    
+    UIView *portcullis = [[UIView alloc] initWithFrame:CGRectMake(95, 30, 90, 109)];
+    UIColor *portcullisBackground = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"portcullis"]];
+    [portcullis setBackgroundColor:portcullisBackground];
+    [portcullis.layer setMasksToBounds:NO];
+    [portcullis.layer setCornerRadius:8.0f];
+    [portcullis.layer setShadowOffset:CGSizeMake(0, 3)];
+    [portcullis.layer setShadowRadius:2.0f];
+    [portcullis.layer setShadowOpacity:0.25f];
+    [self.alert addSubview:portcullis];
+
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, 280, 40)];
+    [title setTextAlignment:NSTextAlignmentCenter];
+    [title setBackgroundColor:[UIColor clearColor]];
+    [title setFont:[UIFont fontWithName:@"Copperplate-Bold" size:25.0f]];
+    [title setText:@"Division called!"];
+    [self.alert addSubview:title];
+    
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissAlert:)];
+    [tapper setNumberOfTapsRequired:1];
+    [tapper setNumberOfTouchesRequired:1];
+    [self.alert addGestureRecognizer:tapper];
+    
+    self.alert.transform = CGAffineTransformScale(self.alert.transform, 0.0f, 0.0f);
+    [self.view addSubview:self.alert];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+
+        [self.alert setTransform:CGAffineTransformIdentity];
+
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.15 animations:^{
+            // Scale up
+            self.alert.transform = CGAffineTransformScale(self.alert.transform, 1.05f, 1.05f);
+        } completion:^(BOOL finished) {
+            // Scale down
+            [UIView animateWithDuration:0.25 animations:^{
+                self.alert.transform = CGAffineTransformScale(self.alert.transform, 0.95f, 0.95f);
+            }];
+        }];
+    
+    }];
+    
+
+    
+}
+
+-(IBAction)dismissAlert:(id)sender {
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.alert.transform = CGAffineTransformScale(self.alert.transform, 0.0f, 0.0f);
+    } completion:^(BOOL finished) {
+        [self.alert removeFromSuperview];
+    }];
+    
+}
+
 
 @end
