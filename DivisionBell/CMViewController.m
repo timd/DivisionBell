@@ -74,6 +74,10 @@
     [self.activityLabel setText:@"The House is not sitting."];
     [self.detailLabel setText:nil];
     [self.partyLabel setText:nil];
+    
+    if (self.alert) {
+        [self.alert removeFromSuperview];
+    }
 }
 
 -(void)viewDidUnload {
@@ -143,6 +147,7 @@
     if ([[update objectForKey:@"bell"] isEqualToString:@"1"]) {
         
         [self drawAlertView];
+        [self playSound];
 
 /*
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Division bell!" message:@"Hurry to the Lobby!!!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -292,23 +297,15 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 
--(void)playSound {
-    
-    // ivar
-    SystemSoundID mBeep;
-    
-    // Create the sound ID
-    NSString* path = [[NSBundle mainBundle]
-                      pathForResource:@"Beep" ofType:@"aiff"];
-    NSURL* url = [NSURL fileURLWithPath:path];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &mBeep);
-    
-    // Play the sound
-    AudioServicesPlaySystemSound(mBeep);
-    
-    // Dispose of the sound
-    AudioServicesDisposeSystemSoundID(mBeep);
+-(void) playSound {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"SchoolBell" ofType:@"aif"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
 }
 
 #pragma mark -
