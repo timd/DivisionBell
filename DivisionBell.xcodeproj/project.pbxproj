@@ -69,6 +69,7 @@
 		2212B18916618E8B0038E3A5 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2212B18816618E8B0038E3A5 /* ViewControllerTests.m */; };
 		2212B18A16618EB70038E3A5 /* CMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22110D79166115F700DF8FD9 /* CMViewController.m */; };
 		2212B18B16618F520038E3A5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22110E201661432300DF8FD9 /* AudioToolbox.framework */; };
+		2212B18D166199ED0038E3A5 /* thatcher.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2212B18C166199ED0038E3A5 /* thatcher.jpg */; };
 		22AFE2521661577C0026A641 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AFE2511661577C0026A641 /* libKiwi.a */; };
 		22AFE256166157C40026A641 /* BaseKiwiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE255166157C40026A641 /* BaseKiwiTest.m */; };
 		22AFE2591661589C0026A641 /* ParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE2581661589C0026A641 /* ParserTest.m */; };
@@ -153,6 +154,7 @@
 		2212B17F166188160038E3A5 /* getPerson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = getPerson.json; path = Data/getPerson.json; sourceTree = SOURCE_ROOT; };
 		2212B18216618DAE0038E3A5 /* houseUp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = houseUp.json; path = Data/houseUp.json; sourceTree = SOURCE_ROOT; };
 		2212B18816618E8B0038E3A5 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
+		2212B18C166199ED0038E3A5 /* thatcher.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thatcher.jpg; sourceTree = "<group>"; };
 		22AFE2511661577C0026A641 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
 		22AFE255166157C40026A641 /* BaseKiwiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseKiwiTest.m; sourceTree = "<group>"; };
 		22AFE2581661589C0026A641 /* ParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTest.m; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		22110D51166115F700DF8FD9 = {
 			isa = PBXGroup;
 			children = (
+				2212B18C166199ED0038E3A5 /* thatcher.jpg */,
 				22110D66166115F700DF8FD9 /* DivisionBell */,
 				22110D8A166115F700DF8FD9 /* DivisionBellTests */,
 				22110D5F166115F700DF8FD9 /* Frameworks */,
@@ -493,6 +496,7 @@
 				22110E2C166155E500DF8FD9 /* single.json in Resources */,
 				2212B180166188160038E3A5 /* getPerson.json in Resources */,
 				2212B18316618DAE0038E3A5 /* houseUp.json in Resources */,
+				2212B18D166199ED0038E3A5 /* thatcher.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

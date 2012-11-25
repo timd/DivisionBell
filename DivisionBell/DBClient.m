@@ -32,20 +32,20 @@
         
         NSString *basename = [request.URL.absoluteString lastPathComponent];
         NSLog(@"basename = %@", basename);
-        
         if ([basename isEqualToString:@"get_annunciator.php"]) {
 
             return [OHHTTPStubsResponse responseWithFile:@"single.json"
                                              contentType:@"text/json"
                                             responseTime:OHHTTPStubsDownloadSpeedEDGE];
-        } else {
-        
-            return [OHHTTPStubsResponse responseWithFile:@"getPerson.json"
-                                             contentType:@"text/json"
-                                            responseTime:OHHTTPStubsDownloadSpeedEDGE];
         }
-        
-        return nil;
+
+        if ([basename rangeOfString:@"getPerson"].location == NSNotFound) {
+            return nil;
+        }
+            
+        return [OHHTTPStubsResponse responseWithFile:@"getPerson.json"
+                                         contentType:@"text/json"
+                                        responseTime:OHHTTPStubsDownloadSpeedEDGE];
 
     }];
     
@@ -56,7 +56,7 @@
 
 -(void)getUpdateFromAPI {
     
-    [self stubNetworkCall];
+    //[self stubNetworkCall];
     
     // Build API call
     // getPerson?key=ABCD&id=12345

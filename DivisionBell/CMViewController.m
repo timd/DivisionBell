@@ -25,6 +25,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *activityLabel;
 @property (nonatomic, weak) IBOutlet UILabel *detailLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @property (nonatomic) BOOL hasUpdated;
 
@@ -70,6 +71,7 @@
         [self.nameLabel setText:@"Name"];
         [self.activityLabel setText:@"Activity"];
         [self.detailLabel setText:@"Detail"];
+        [self.imageView setImage:nil];
         self.hasUpdated = NO;
     }
 }
@@ -130,6 +132,7 @@
             // HOUSE UP received, can only update activity
             [self.nameLabel setText:nil];
             [self.detailLabel setText:nil];
+            [self.imageView setImage:nil];
 
         }
 
@@ -143,10 +146,40 @@
         NSLog(@"image = %@", [personDict objectForKey:@"image"]);
         NSLog(@"first_name = %@", [personDict objectForKey:@"first_name"]);
         NSLog(@"last_name = %@", [personDict objectForKey:@"last_name"]);
-        NSLog(@"party = %@", [personDict objectForKey:@"party"]);        
+        NSLog(@"party = %@", [personDict objectForKey:@"party"]);
+        NSLog(@"image_height = %@", [personDict objectForKey:@"image_height"]);
+        NSLog(@"image_width = %@", [personDict objectForKey:@"image_width"]);
+        
+        [self.imageView setImage:nil];
+        
+        if ([personDict objectForKey:@"image"]) {
+            NSString *imageURLString = [NSString stringWithFormat:@"http://www.theyworkforyou.com%@", [personDict objectForKey:@"image"]];
+            NSURL *imageURL = [NSURL URLWithString:imageURLString];
+            //NSData *data = [NSData dataWithContentsOfURL:imageURL];
+            //UIImage *image = [UIImage imageWithData:data];
+            //[self.imageView setImage:image];
+            [self getImage:imageURL];
+        } else {
+            [self.imageView setImage:[UIImage imageNamed:@"thatcher.jpg"]];
+        }
+
     }
 
 }
+
+-(void)getImage:(NSURL *)imageURL {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW,0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:imageURL];
+        UIImage *image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.imageView setImage:image];
+            [self.imageView setNeedsDisplay];
+        });
+    });
+    
+}
+
 
 -(void)playSound {
     
