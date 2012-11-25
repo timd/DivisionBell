@@ -273,7 +273,13 @@
             //[self.imageView setImage:image];
             [self getImage:imageURL];
         } else {
-            [self.imageView setImage:[UIImage imageNamed:@"thatcher.jpg"]];
+            UIView *superView = self.imageView.superview;
+            UIImage *jim = [UIImage imageNamed:@"jimhacker.jpg"];
+            float hOffset = (superView.frame.size.width - 157) / 2;
+            float vOffset = (superView.frame.size.height - 118) / 2;
+            
+            [self.imageView setFrame:CGRectMake(hOffset, vOffset, 157, 118)];
+            [self.imageView setImage:jim];
         }
         
         if ([personDict objectForKey:@"party"]) {
@@ -290,6 +296,13 @@
         NSData *data = [NSData dataWithContentsOfURL:imageURL];
         UIImage *image = [UIImage imageWithData:data];
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            UIView *superView = self.imageView.superview;
+            
+            float hOffset = (superView.frame.size.width - image.size.width) / 2;
+            float vOffset = (superView.frame.size.height - image.size.height) / 2;
+            
+            [self.imageView setFrame:CGRectMake(hOffset, vOffset, image.size.width, image.size.height)];
             [self.imageView setImage:image];
             [self.imageView setNeedsDisplay];
         });

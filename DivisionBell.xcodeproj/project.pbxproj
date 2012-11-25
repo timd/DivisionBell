@@ -83,6 +83,7 @@
 		224A575D166236C0001CF014 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A575C166236C0001CF014 /* icon@2x.png */; };
 		224A575F1662477E001CF014 /* bell.aif in Resources */ = {isa = PBXBuildFile; fileRef = 224A575E1662477E001CF014 /* bell.aif */; };
 		224A576116624AC3001CF014 /* SchoolBell.aif in Resources */ = {isa = PBXBuildFile; fileRef = 224A576016624AC3001CF014 /* SchoolBell.aif */; };
+		224A576A16626225001CF014 /* jimhacker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 224A576916626225001CF014 /* jimhacker.jpg */; };
 		22AFE2521661577C0026A641 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AFE2511661577C0026A641 /* libKiwi.a */; };
 		22AFE256166157C40026A641 /* BaseKiwiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE255166157C40026A641 /* BaseKiwiTest.m */; };
 		22AFE2591661589C0026A641 /* ParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE2581661589C0026A641 /* ParserTest.m */; };
@@ -182,6 +183,7 @@
 		224A575C166236C0001CF014 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		224A575E1662477E001CF014 /* bell.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bell.aif; path = Assets/bell.aif; sourceTree = SOURCE_ROOT; };
 		224A576016624AC3001CF014 /* SchoolBell.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = SchoolBell.aif; path = Assets/SchoolBell.aif; sourceTree = SOURCE_ROOT; };
+		224A576916626225001CF014 /* jimhacker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = jimhacker.jpg; path = Assets/jimhacker.jpg; sourceTree = SOURCE_ROOT; };
 		22AFE2511661577C0026A641 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
 		22AFE255166157C40026A641 /* BaseKiwiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseKiwiTest.m; sourceTree = "<group>"; };
 		22AFE2581661589C0026A641 /* ParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTest.m; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				224A575E1662477E001CF014 /* bell.aif */,
 				224A575C166236C0001CF014 /* icon@2x.png */,
 				224A575A166236BD001CF014 /* icon.png */,
+				224A576916626225001CF014 /* jimhacker.jpg */,
 				2212B18C166199ED0038E3A5 /* thatcher.jpg */,
 				224A575616623081001CF014 /* Rosarivo-Regular.ttf */,
 				224A575216622E92001CF014 /* pool_table_@2X.png */,
@@ -566,6 +569,7 @@
 				224A575D166236C0001CF014 /* icon@2x.png in Resources */,
 				224A575F1662477E001CF014 /* bell.aif in Resources */,
 				224A576116624AC3001CF014 /* SchoolBell.aif in Resources */,
+				224A576A16626225001CF014 /* jimhacker.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
