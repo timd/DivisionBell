@@ -18,6 +18,8 @@
 
 #import <AudioToolbox/AudioToolbox.h>
 
+#define kAnimationDuration 0.5f
+
 @interface CMViewController ()
 
 @property (nonatomic, strong) DBClient *dbClient;
@@ -29,6 +31,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *activityLabel;
 @property (nonatomic, weak) IBOutlet UILabel *detailLabel;
+@property (nonatomic, weak) IBOutlet UILabel *partyLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @property (nonatomic) BOOL hasUpdated;
@@ -58,16 +61,19 @@
     [self.nameLabel setFont:[UIFont fontWithName:@"Rosarivo-Regular" size:18]];
     [self.activityLabel setFont:[UIFont fontWithName:@"Rosarivo-Regular" size:18]];
     [self.detailLabel setFont:[UIFont fontWithName:@"Rosarivo-Regular" size:18]];
+    [self.partyLabel setFont:[UIFont fontWithName:@"Rosarivo-Regular" size:14]];
     
     [self.imageView.layer setMasksToBounds:NO];
     [self.imageView.layer setCornerRadius:8.0f];
     [self.imageView.layer setShadowOffset:CGSizeMake(0, 5)];
     [self.imageView.layer setShadowRadius:5.0f];
     [self.imageView.layer setShadowOpacity:0.5f];
+    [self.imageView setAlpha:0.0f];
     
     [self.nameLabel setText:nil];
     [self.activityLabel setText:@"The House is not sitting."];
     [self.detailLabel setText:nil];
+    [self.partyLabel setText:nil];
 }
 
 -(void)viewDidUnload {
@@ -85,6 +91,13 @@
 #pragma mark Interation
 
 -(IBAction)didTapUpdateButton:(id)sender {
+    
+    if ([self.imageView alpha] < 1.0f) {
+        [UIView animateWithDuration:kAnimationDuration animations:^{
+            [self.imageView setAlpha:0.0f];
+        }];
+    }
+    
     [self.dbClient getUpdateFromAPI];
     self.hasUpdated = YES;
 }
@@ -101,15 +114,23 @@
 
 -(IBAction)didTapClearButton:(id)sender {
 
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        [self.imageView setAlpha:0.0f];
+    }];
+    
     if (self.alert) {
         [self.alert removeFromSuperview];
     }
 
-    [self.nameLabel setText:nil];
-    [self.activityLabel setText:@"The House is not sitting."];
-    [self.detailLabel setText:nil];
-    [self.imageView setImage:nil];
-    self.hasUpdated = NO;
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+        [self.nameLabel setText:nil];
+        [self.activityLabel setText:@"The House is not sitting."];
+        [self.detailLabel setText:nil];
+        [self.imageView setImage:nil];
+        [self.partyLabel setText:nil];
+        [self.partyLabel setAlpha:0.0f];
+        self.hasUpdated = NO;
+    }];
 
 }
 
@@ -153,9 +174,31 @@
             NSString *name = [personPayload  objectForKey:@"name"];
             NSString *person_id = [personPayload objectForKey:@"person_id"];
             NSString *detail = [responseDict objectForKey:@"topic"];
+            NSString *activity = [responseDict objectForKey:@"activity"];
             
-            [self.nameLabel setText:name];
-            [self.detailLabel setText:detail];
+            [UIView animateWithDuration:kAnimationDuration animations:^{
+                
+                [self.nameLabel setAlpha:0.0f];
+                [self.detailLabel setAlpha:0.0f];
+                [self.activityLabel setAlpha:0.0f];
+                [self.partyLabel setAlpha:0.0f];
+                [self.imageView setAlpha:0.0f];
+                
+            } completion:^(BOOL finished) {
+                
+                [self.nameLabel setText:name];
+                [self.detailLabel setText:detail];
+                [self.activityLabel setText:activity];
+
+                [UIView animateWithDuration:kAnimationDuration animations:^{
+                    [self.nameLabel setAlpha:1.0f];
+                    [self.detailLabel setAlpha:1.0f];
+                    [self.partyLabel setAlpha:1.0f];
+                    [self.activityLabel setAlpha:1.0f];
+                    [self.imageView setAlpha:1.0f];
+                }];
+                
+            }];
             
             // Update images from TWFY data
             TWFYClient *twfyClient = [TWFYClient sharedInstance];
@@ -163,16 +206,46 @@
             [twfyClient getDataForPerson:person_id];
             
         } else {
+            
+            [UIView animateWithDuration:kAnimationDuration animations:^{
+                
+                [self.nameLabel setAlpha:0.0f];
+                [self.detailLabel setAlpha:0.0f];
+                [self.activityLabel setAlpha:0.0f];
+                [self.partyLabel setAlpha:0.0f];
+                [self.imageView setAlpha:0.0f];
+                
+            } completion:^(BOOL finished) {
+                
+                [self.nameLabel setText:nil];
+                [self.detailLabel setText:nil];
+                [self.partyLabel setText:nil];
+                [self.imageView setImage:nil];
+
+                NSString *activity = nil;
+                if ([[responseDict objectForKey:@"activity"] isEqualToString:@"HOUSEUP"]) {
+                    activity = @"The House is not sitting.";
+                } else {
+                    activity = [responseDict objectForKey:@"activity"];
+                }
+                [self.activityLabel setText:activity];
+
+                [UIView animateWithDuration:kAnimationDuration animations:^{
+                    [self.nameLabel setAlpha:1.0f];
+                    [self.detailLabel setAlpha:1.0f];
+                    [self.activityLabel setAlpha:1.0f];
+                    [self.partyLabel setAlpha:1.0f];
+                    [self.imageView setAlpha:1.0f];
+                }];
+                
+            }];
 
             // HOUSE UP received, can only update activity
-            [self.nameLabel setText:nil];
-            [self.detailLabel setText:nil];
-            [self.imageView setImage:nil];
+
+
 
         }
 
-        NSString *activity = [responseDict objectForKey:@"activity"];
-        [self.activityLabel setText:activity];
 
         
     } else if ([call isEqualToString:@"getPerson"]) {
@@ -196,6 +269,10 @@
             [self getImage:imageURL];
         } else {
             [self.imageView setImage:[UIImage imageNamed:@"thatcher.jpg"]];
+        }
+        
+        if ([personDict objectForKey:@"party"]) {
+            [self.partyLabel setText:[personDict objectForKey:@"party"]];
         }
 
     }
